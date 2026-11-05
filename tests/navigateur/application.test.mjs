@@ -146,7 +146,7 @@ test('À propos : bouton direct, contact, licence et bibliothèques', async () =
   const texte = await page.textContent('#fenetre-a-propos');
   assert.match(texte, /Omni-Tableur/);
   assert.match(texte, /Version \d+\.\d+\.\d+/);
-  assert.match(texte, /Application créée par Ferrus Dantioch et Claude/);
+  assert.match(texte, /Application créée par Ferrus Dantioch, avec l'aide de l'intelligence artificielle/);
   assert.match(texte, /Un retour, une idée, un problème \?/);
   assert.match(texte, /Creative Commons BY-NC-ND 4\.0/);
   for (const nom of ['fast-formula-parser', 'Chevrotain', 'jStat', 'bessel', 'bahttext', 'Oxanium', 'Literata', 'JetBrains Mono']) assert.match(texte, new RegExp(nom));
@@ -181,7 +181,7 @@ test('menu : lignes et colonnes en plus, aide, à propos', async () => {
   await page.click('#bouton-menu');
   await page.click('#menu-a-propos');
   const texte = await page.textContent('#fenetre-a-propos');
-  assert.match(texte, /Application créée par Ferrus Dantioch et Claude/);
+  assert.match(texte, /Application créée par Ferrus Dantioch, avec l'aide de l'intelligence artificielle/);
   assert.match(texte, /Version \d+\.\d+\.\d+/);
   assert.match(texte, /fast-formula-parser/);
   await page.click('#fenetre-a-propos [data-fermer]');

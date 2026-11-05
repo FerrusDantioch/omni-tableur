@@ -12,9 +12,9 @@ self.CONFIG_APP = Object.freeze({
   nom: 'Omni-Tableur',
 
   // Numéro de version : à augmenter à chaque publication (ex. 2.1.1).
-  version: '2.2.2',
+  version: '2.2.3',
 
-  auteurs: 'Ferrus Dantioch et Claude',
+  auteurs: "Ferrus Dantioch, avec l'aide de l'intelligence artificielle",
   siteOmni: 'https://ferrusdantioch.github.io/omni-systeme/',
 
   // Identifiant technique du stockage (base de données, préférences, cache).
