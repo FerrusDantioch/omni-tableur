@@ -9,7 +9,7 @@ comme une application classique.
 - À la souris, au clavier et au doigt.
 - Application de la « Suite bureautique » de l'Omni-système, avec Omni-Texte
   (traitement de texte) et Omni-Romancier (écriture de romans).
-- Créée par Ferrus Dantioch et Claude.
+- Créée par Ferrus Dantioch, avec l'aide de l'intelligence artificielle.
 
 **Ouvrir l'application :** https://ferrusdantioch.github.io/omni-tableur/
 (dépôt GitHub `FerrusDantioch/omni-tableur`).
