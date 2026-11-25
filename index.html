@@ -84,6 +84,7 @@
     </svg>
 
     <header class="entete">
+      <h1 class="visuellement-cache">Omni-Tableur</h1>
       <span class="marque" aria-hidden="true"><svg><use href="#i-marque" /></svg></span>
       <label class="titre-classeur">
         <span class="visuellement-cache">Titre du classeur</span>
@@ -288,7 +289,7 @@
       <label class="case case-panneau"><input id="tri-titres" type="checkbox" /> La première ligne contient des titres (elle ne bouge pas)</label>
       <button id="trier-croissant" class="outil large choix-export" type="button"><strong>Croissant</strong><small>A → Z, 1 → 9, de la plus ancienne date à la plus récente</small></button>
       <button id="trier-decroissant" class="outil large choix-export" type="button"><strong>Décroissant</strong><small>Z → A, 9 → 1, de la plus récente date à la plus ancienne</small></button>
-      <p class="panneau-aide">Pour trier une partie précise, sélectionnez-la d'abord (plusieurs lignes et colonnes). Les cellules vides vont à la fin. « Annuler » remet l'ordre d'avant.</p>
+      <p class="panneau-aide">Pour trier une partie précise, sélectionne-la d'abord (plusieurs lignes et colonnes). Les cellules vides vont à la fin. « Annuler » remet l'ordre d'avant.</p>
     </div>
 
     <!-- Panneau d'une feuille (appui sur l'onglet de la feuille affichée). -->
@@ -327,7 +328,7 @@
     <div id="panneau-couleur-bordure" class="panneau" popover>
       <p class="panneau-titre">Couleur des bordures</p>
       <div class="nuancier nuancier-encres"></div>
-      <p class="panneau-aide">Choisissez la couleur, puis le type de bordure (Toutes, Extérieure…).</p>
+      <p class="panneau-aide">Choisis la couleur, puis le type de bordure (Toutes, Extérieure…).</p>
     </div>
     <div id="panneau-format" class="panneau" popover>
       <p class="panneau-titre">Format des nombres</p>
@@ -381,7 +382,7 @@
     </div>
 
     <div class="barre-formule">
-      <input id="nom-cellule" class="nom-cellule" type="text" value="A1" autocomplete="off" spellcheck="false" autocapitalize="characters" aria-label="Cellule active (tapez une adresse puis Entrée pour y aller)" />
+      <input id="nom-cellule" class="nom-cellule" type="text" value="A1" autocomplete="off" spellcheck="false" autocapitalize="characters" aria-label="Cellule active (tape une adresse puis Entrée pour y aller)" />
       <span class="fx" aria-hidden="true">fx</span>
       <input id="champ-formule" class="champ-formule" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="enter" aria-label="Contenu de la cellule active" />
       <button id="valider-saisie" class="outil-rond" type="button" title="Valider (Entrée)" aria-label="Valider la saisie">
@@ -429,7 +430,7 @@
 
     <!-- Bandeau affiché si Omni-Tableur est ouvert dans deux onglets ou fenêtres. -->
     <div id="bandeau-onglets" class="bandeau" role="alert" hidden>
-      <span>Omni-Tableur est aussi ouvert ailleurs (autre onglet ou fenêtre). Gardez-en un seul ouvert, sinon des modifications pourraient être perdues.</span>
+      <span>Omni-Tableur est aussi ouvert ailleurs (autre onglet ou fenêtre). Gardes-en un seul ouvert, sinon des modifications pourraient être perdues.</span>
       <button id="bouton-compris" class="outil" type="button">Compris</button>
     </div>
 
@@ -551,7 +552,7 @@
         </div>
         <div id="zone-graphique" class="zone-graphique"></div>
         <p id="note-graphique" class="note" role="status"></p>
-        <p class="note">Noms dans la 1<sup>re</sup> colonne, nombres à côté ; la 1<sup>re</sup> ligne peut donner le nom de chaque série. Le graphique n'est pas gardé dans le classeur : rouvrez cette fenêtre pour le mettre à jour.</p>
+        <p class="note">Noms dans la 1<sup>re</sup> colonne, nombres à côté ; la 1<sup>re</sup> ligne peut donner le nom de chaque série. Le graphique n'est pas gardé dans le classeur : rouvre cette fenêtre pour le mettre à jour.</p>
         <div class="boutons-fenetre">
           <button id="graphique-image" class="outil principal" type="button">Enregistrer l'image (.png)</button>
         </div>
@@ -601,9 +602,9 @@
     <dialog id="fenetre-importer-classeur" class="fenetre" aria-labelledby="titre-importer-classeur">
       <div class="fenetre-tete"><h2 id="titre-importer-classeur">Importer un classeur</h2></div>
       <div class="fenetre-corps">
-        <p><strong>Cela remplacera votre classeur actuel. Continuer ?</strong></p>
+        <p><strong>Cela remplacera ton classeur actuel. Continuer ?</strong></p>
         <p id="resume-import"></p>
-        <p class="note">Tant que l'application reste ouverte, le bouton « Annuler » permet de revenir au classeur d'avant. Pour le garder aussi dans un fichier, choisissez d'abord « Exporter le classeur (.json) ».</p>
+        <p class="note">Tant que l'application reste ouverte, le bouton « Annuler » permet de revenir au classeur d'avant. Pour le garder aussi dans un fichier, choisis d'abord « Exporter le classeur (.json) ».</p>
         <div class="boutons-fenetre">
           <button class="outil" type="button" data-fermer="garder">Garder mon classeur</button>
           <button class="outil principal" type="button" data-fermer="remplacer">Remplacer</button>
@@ -615,7 +616,7 @@
       <div class="fenetre-tete"><h2 id="titre-erreur-fichier">Import impossible</h2></div>
       <div class="fenetre-corps">
         <p id="texte-erreur-fichier" role="alert"></p>
-        <p class="note">Votre classeur actuel n'a pas été modifié.</p>
+        <p class="note">Ton classeur actuel n'a pas été modifié.</p>
         <div class="boutons-fenetre">
           <button class="outil principal" type="button" data-fermer="">Compris</button>
         </div>
@@ -627,8 +628,8 @@
       <div class="fenetre-corps">
         <p>La fenêtre d'impression va s'ouvrir. Pour obtenir un fichier PDF :</p>
         <ol>
-          <li>dans « Imprimante » ou « Destination », choisissez <strong>« Enregistrer au format PDF »</strong> ;</li>
-          <li>appuyez sur <strong>« Enregistrer »</strong> (ou « Télécharger » sur téléphone).</li>
+          <li>dans « Imprimante » ou « Destination », choisis <strong>« Enregistrer au format PDF »</strong> ;</li>
+          <li>appuie sur <strong>« Enregistrer »</strong> (ou « Télécharger » sur téléphone).</li>
         </ol>
         <p class="note">Le tableau est imprimé de A1 jusqu'à la dernière cellule remplie, sur fond clair. Un tableau large passe automatiquement en format paysage.</p>
         <label class="case"><input type="checkbox" /> Ne plus afficher cette explication</label>
@@ -654,13 +655,13 @@
         </div>
         <p><strong>Application créée par <span data-config="auteurs">Ferrus Dantioch, avec l'aide de l'intelligence artificielle</span>.</strong></p>
         <p>Omni-Tableur fait partie de la Suite bureautique de l'Omni-système, aux côtés d'Omni-Texte (traitement de texte) et d'Omni-Romancier (écriture de romans).</p>
-        <p>Vos classeurs restent sur cet appareil : aucun compte, rien n'est envoyé sur internet. L'application fonctionne aussi sans connexion, et chaque modification est enregistrée automatiquement.</p>
+        <p>Tes classeurs restent sur cet appareil : aucun compte, rien n'est envoyé sur internet. L'application fonctionne aussi sans connexion, et chaque modification est enregistrée automatiquement.</p>
         <p><a data-config-lien="siteOmni" href="https://ferrusdantioch.github.io/omni-systeme/" target="_blank" rel="noopener">Site de l'Omni-système</a></p>
         <!-- Retours : une adresse-alias (Proton) créée pour ça. Le lien ouvre seulement
              l'application de messagerie, adresse et objet déjà remplis : rien ne part tout seul. -->
         <section class="a-propos-bloc" aria-labelledby="titre-retours">
           <h3 id="titre-retours">Un retour, une idée, un problème ?</h3>
-          <p>Vos messages sont les bienvenus : <a id="lien-contact" href="mailto:omni-systeme.choking513@passmail.net?subject=Retour%20sur%20Omni-Tableur">écrire un message</a> (votre messagerie s'ouvre, avec l'objet « Retour sur Omni-Tableur » déjà rempli).</p>
+          <p>Tes messages sont les bienvenus : <a id="lien-contact" href="mailto:omni-systeme.choking513@passmail.net?subject=Retour%20sur%20Omni-Tableur">écrire un message</a> (ta messagerie s'ouvre, avec l'objet « Retour sur Omni-Tableur » déjà rempli).</p>
           <p class="adresse-contact">
             <span id="adresse-contact" class="adresse-mail">omni-systeme.choking513@passmail.net</span>
             <button id="copier-adresse" class="outil" type="button">Copier l'adresse</button>
@@ -669,7 +670,7 @@
         </section>
         <section class="a-propos-bloc" aria-labelledby="titre-licence">
           <h3 id="titre-licence">Licence</h3>
-          <p><strong>© 2026 Ferrus Dantioch.</strong> Omni-Tableur est distribué sous licence <strong>Creative Commons BY-NC-ND 4.0</strong> (Attribution – Pas d'utilisation commerciale – Pas de modification) : vous pouvez l'utiliser et le partager tel quel, gratuitement, en citant son auteur. Il ne peut être ni vendu, ni modifié. Texte complet : fichier LICENSE du projet ; résumé : <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr" target="_blank" rel="noopener">site de Creative Commons</a>.</p>
+          <p><strong>© 2026 Ferrus Dantioch.</strong> Omni-Tableur est distribué sous licence <strong>Creative Commons BY-NC-ND 4.0</strong> (Attribution – Pas d'utilisation commerciale – Pas de modification) : tu peux l'utiliser et le partager tel quel, gratuitement, en citant son auteur. Il ne peut être ni vendu, ni modifié. Texte complet : fichier LICENSE du projet ; résumé : <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr" target="_blank" rel="noopener">site de Creative Commons</a>.</p>
         </section>
         <section class="a-propos-bloc" aria-labelledby="titre-bibliotheques">
           <h3 id="titre-bibliotheques">Bibliothèques et polices utilisées</h3>
@@ -693,7 +694,7 @@
         <section>
           <h3>Saisir</h3>
           <ul>
-            <li>Sélectionnez une cellule et tapez : le texte remplace son contenu. <strong>Entrée</strong> valide, <strong>Échap</strong> annule.</li>
+            <li>Sélectionne une cellule et tape : le texte remplace son contenu. <strong>Entrée</strong> valide, <strong>Échap</strong> annule.</li>
             <li>Pour modifier sans tout effacer : <strong>double-clic</strong>, touche <strong>F2</strong>, ou la barre « fx » en haut.</li>
             <li>Au doigt : un appui sélectionne la cellule, un <strong>second appui</strong> ouvre le clavier.</li>
             <li>Nombres : <code>3,5</code> ou <code>3.5</code>, <code>1 234</code>, <code>12,50 €</code>, <code>20 %</code>. Une apostrophe force le texte : <code>'0612</code>.</li>
@@ -705,7 +706,7 @@
             <li>Flèches, <strong>Tab</strong> (à droite), <strong>Entrée</strong> (en bas) ; avec <strong>Maj</strong>, dans l'autre sens.</li>
             <li><strong>Ctrl + flèche</strong> : jusqu'au bord du tableau. <strong>Ctrl + Origine</strong> : retour en A1.</li>
             <li>Plusieurs cellules : <strong>Maj + flèches</strong>, glisser à la souris, ou la poignée ronde au doigt. Un appui (ou un clic) sur l'en-tête « A » ou « 1 » sélectionne toute la colonne ou toute la ligne (Maj + clic : plusieurs). Mise en forme, Copier, Insérer et Supprimer s'appliquent alors à toute la sélection.</li>
-            <li>Dans la case « A1 » en haut à gauche, tapez une adresse (<code>C12</code>) puis Entrée pour y aller.</li>
+            <li>Dans la case « A1 » en haut à gauche, tape une adresse (<code>C12</code>) puis Entrée pour y aller.</li>
             <li><strong>Zoom</strong> (de 50 % à 200 %) : boutons <strong>−</strong> et <strong>+</strong> en bas à droite (un appui sur le pourcentage revient à 100 %), pincement à deux doigts sur la grille, ou <strong>Ctrl + molette</strong>. Le zoom ne change que l'affichage, pas le classeur ni le PDF.</li>
           </ul>
         </section>
@@ -713,11 +714,11 @@
           <h3>Modifier le tableau (onglet « Édition »)</h3>
           <ul>
             <li><strong>Copier, Couper, Coller</strong> : boutons, ou <strong>Ctrl + C / X / V</strong>. Une formule collée plus loin s'adapte (=A1*2 devient =A2*2 une ligne plus bas). Copier une cellule puis coller sur une plage la recopie partout.</li>
-            <li><strong>Recopier</strong> : à la souris, tirez le petit carré en bas à droite de la sélection. Les formules s'adaptent et les suites continuent : 1, 2 → 3, 4… ; lundi → mardi… ; janvier → février… ; « Semaine 1 » → « Semaine 2 » ; une date → le jour suivant.</li>
-            <li>Au doigt (ou au clavier) : sélectionnez la cellule de départ et les cellules à remplir, puis <strong>Recopier en bas</strong> (<strong>Ctrl + D</strong>) ou <strong>Recopier à droite</strong> (<strong>Ctrl + R</strong>).</li>
+            <li><strong>Recopier</strong> : à la souris, tire le petit carré en bas à droite de la sélection. Les formules s'adaptent et les suites continuent : 1, 2 → 3, 4… ; lundi → mardi… ; janvier → février… ; « Semaine 1 » → « Semaine 2 » ; une date → le jour suivant.</li>
+            <li>Au doigt (ou au clavier) : sélectionne la cellule de départ et les cellules à remplir, puis <strong>Recopier en bas</strong> (<strong>Ctrl + D</strong>) ou <strong>Recopier à droite</strong> (<strong>Ctrl + R</strong>).</li>
             <li><strong>Insérer</strong> des lignes ou des colonnes, ou les <strong>Supprimer</strong> : autant qu'il y en a de sélectionnées. Les formules suivent les cellules ; si une cellule utilisée par une formule est supprimée, la formule affiche <code>#REF!</code>.</li>
             <li><strong>Effacer</strong> (ou la touche <strong>Suppr</strong>) vide les cellules sélectionnées, en gardant leur mise en forme.</li>
-            <li><strong>Rechercher</strong> (<strong>Ctrl + F</strong>) : tapez le texte, puis <strong>Suivant</strong> (ou Entrée) sélectionne chaque cellule qui le contient ; le nombre de résultats s'affiche. <strong>Remplacer</strong> change la cellule sélectionnée puis passe à la suivante ; <strong>Tout remplacer</strong> change tout d'un coup (un seul « Annuler » remet tout). Options : respecter les majuscules, chercher dans toutes les feuilles. La recherche porte sur ce qui a été tapé (pour une formule, son texte : <code>SOMME</code>…).</li>
+            <li><strong>Rechercher</strong> (<strong>Ctrl + F</strong>) : tape le texte, puis <strong>Suivant</strong> (ou Entrée) sélectionne chaque cellule qui le contient ; le nombre de résultats s'affiche. <strong>Remplacer</strong> change la cellule sélectionnée puis passe à la suivante ; <strong>Tout remplacer</strong> change tout d'un coup (un seul « Annuler » remet tout). Options : respecter les majuscules, chercher dans toutes les feuilles. La recherche porte sur ce qui a été tapé (pour une formule, son texte : <code>SOMME</code>…).</li>
           </ul>
         </section>
         <section>
@@ -725,19 +726,19 @@
           <ul>
             <li>Onglet <strong>« Mise en forme »</strong> : gras (<strong>Ctrl + B</strong>), italique (<strong>Ctrl + I</strong>), couleur du texte, couleur de fond, alignement (gauche, centre, droite ; un second appui revient à l'automatique), largeur des colonnes.</li>
             <li><strong>À la ligne</strong> (retour à la ligne) : un texte trop long pour sa colonne continue sur plusieurs lignes au lieu d'être coupé, et la ligne du tableau s'agrandit toute seule (elle se réajuste si le texte ou la largeur de la colonne change). Un second appui l'enlève. Le PDF le respecte aussi.</li>
-            <li><strong>Fusionner</strong> : sélectionnez plusieurs cellules (par exemple A1 à D1 pour un titre) puis « Fusionner » : elles n'en font plus qu'une, au texte centré. Seul le contenu de la cellule en haut à gauche est gardé (une question est posée si d'autres cellules sont remplies) ; ses couleurs et ses bordures s'appliquent à toute la zone. Une formule qui vise une case de la zone (<code>=B1</code>) utilise la cellule en haut à gauche. Sur une cellule fusionnée, le même bouton devient « Défusionner ». On ne peut pas trier des lignes qui contiennent des cellules fusionnées.</li>
-            <li><strong>Conditions</strong> (mise en forme conditionnelle) : colorer des cellules selon leur valeur. Choisissez les cellules (ex. <code>B2:B20</code>), la condition (supérieure à, inférieure à, égale à, entre, négative, contient le texte) et une couleur de fond et/ou de texte. Plusieurs règles possibles ; la liste permet de les modifier ou de les supprimer. Les couleurs se mettent à jour toutes seules.</li>
+            <li><strong>Fusionner</strong> : sélectionne plusieurs cellules (par exemple A1 à D1 pour un titre) puis « Fusionner » : elles n'en font plus qu'une, au texte centré. Seul le contenu de la cellule en haut à gauche est gardé (une question est posée si d'autres cellules sont remplies) ; ses couleurs et ses bordures s'appliquent à toute la zone. Une formule qui vise une case de la zone (<code>=B1</code>) utilise la cellule en haut à gauche. Sur une cellule fusionnée, le même bouton devient « Défusionner ». On ne peut pas trier des lignes qui contiennent des cellules fusionnées.</li>
+            <li><strong>Conditions</strong> (mise en forme conditionnelle) : colorer des cellules selon leur valeur. Choisis les cellules (ex. <code>B2:B20</code>), la condition (supérieure à, inférieure à, égale à, entre, négative, contient le texte) et une couleur de fond et/ou de texte. Plusieurs règles possibles ; la liste permet de les modifier ou de les supprimer. Les couleurs se mettent à jour toutes seules.</li>
             <li><strong>Format</strong> des nombres : nombre (1 234,50), euros, pourcentage, date, et nombre de décimales (− et +). Le format change seulement l'affichage : les calculs gardent le nombre exact.</li>
-            <li>Onglet <strong>« Bordures »</strong> : choisissez d'abord le trait (<strong>Fin</strong> ou <strong>Épais</strong>) et la <strong>Couleur</strong>, sélectionnez les cellules, puis <strong>Toutes</strong>, <strong>Extérieure</strong>, <strong>Haut</strong>, <strong>Bas</strong>, <strong>Gauche</strong>, <strong>Droite</strong> ou <strong>Aucune</strong>. Les bordures apparaissent aussi dans le PDF.</li>
+            <li>Onglet <strong>« Bordures »</strong> : choisis d'abord le trait (<strong>Fin</strong> ou <strong>Épais</strong>) et la <strong>Couleur</strong>, sélectionne les cellules, puis <strong>Toutes</strong>, <strong>Extérieure</strong>, <strong>Haut</strong>, <strong>Bas</strong>, <strong>Gauche</strong>, <strong>Droite</strong> ou <strong>Aucune</strong>. Les bordures apparaissent aussi dans le PDF.</li>
           </ul>
         </section>
         <section>
           <h3>Feuilles et données</h3>
           <ul>
             <li><strong>Feuilles</strong> : les onglets en bas de l'écran. <strong>+</strong> ajoute une feuille ; un appui sur un onglet l'affiche ; un appui sur l'onglet affiché ouvre son menu (<strong>Renommer…</strong>, <strong>Supprimer…</strong>). À la souris, un double-clic renomme.</li>
-            <li>Onglet <strong>« Données »</strong> → <strong>Trier</strong> : placez-vous dans la colonne qui décide de l'ordre. Omni-Tableur trouve le tableau autour, reconnaît la ligne de titres (case à cocher), puis trie en ordre croissant ou décroissant. Les lignes restent entières.</li>
+            <li>Onglet <strong>« Données »</strong> → <strong>Trier</strong> : place-toi dans la colonne qui décide de l'ordre. Omni-Tableur trouve le tableau autour, reconnaît la ligne de titres (case à cocher), puis trie en ordre croissant ou décroissant. Les lignes restent entières.</li>
             <li><strong>Figer la 1<sup>re</sup> ligne</strong> : la ligne des titres reste visible quand on fait défiler.</li>
-            <li><strong>Graphique</strong> : sélectionnez un tableau (ou touchez simplement une de ses cellules), puis « Graphique ». Choisissez <strong>Colonnes</strong>, <strong>Courbe</strong> ou <strong>Secteurs</strong> (camembert), ajoutez un titre si vous voulez. Les noms viennent de la 1<sup>re</sup> colonne, les nombres des colonnes suivantes, et la 1<sup>re</sup> ligne donne le nom de chaque série. <strong>Enregistrer l'image (.png)</strong> le télécharge, sur fond blanc. Le graphique n'est pas gardé dans le classeur : rouvrez la fenêtre pour le mettre à jour.</li>
+            <li><strong>Graphique</strong> : sélectionne un tableau (ou touche simplement une de ses cellules), puis « Graphique ». Choisis <strong>Colonnes</strong>, <strong>Courbe</strong> ou <strong>Secteurs</strong> (camembert), ajoute un titre si tu veux. Les noms viennent de la 1<sup>re</sup> colonne, les nombres des colonnes suivantes, et la 1<sup>re</sup> ligne donne le nom de chaque série. <strong>Enregistrer l'image (.png)</strong> le télécharge, sur fond blanc. Le graphique n'est pas gardé dans le classeur : rouvre la fenêtre pour le mettre à jour.</li>
             <li><strong>Importer</strong> → <strong>Importer un CSV</strong> : un fichier CSV (Excel, banque, Google Sheets…) arrive dans une nouvelle feuille.</li>
             <li><strong>Exporter</strong> → <strong>Exporter la feuille (.csv)</strong> ou <strong>(.pdf)</strong> : la feuille affichée, pour un autre tableur ou pour l'imprimer.</li>
           </ul>
@@ -745,10 +746,10 @@
         <section>
           <h3>Sauvegarder dans un fichier</h3>
           <ul>
-            <li>Le classeur est enregistré automatiquement, mais seulement <strong>dans ce navigateur</strong> : si vous effacez ses données ou changez d'appareil, il disparaît.</li>
-            <li>Pour le garder en lieu sûr : onglet « Données » → <strong>Exporter</strong> → <strong>Exporter le classeur (.json)</strong>. Le fichier <code>omni-tableur-AAAA-MM-JJ.json</code> arrive dans les téléchargements ; rangez-le où vous voulez (clé USB, cloud, e-mail…).</li>
+            <li>Le classeur est enregistré automatiquement, mais seulement <strong>dans ce navigateur</strong> : si tu effaces ses données ou changes d'appareil, il disparaît.</li>
+            <li>Pour le garder en lieu sûr : onglet « Données » → <strong>Exporter</strong> → <strong>Exporter le classeur (.json)</strong>. Le fichier <code>omni-tableur-AAAA-MM-JJ.json</code> arrive dans les téléchargements ; range-le où tu veux (clé USB, cloud, e-mail…).</li>
             <li>Pour le rouvrir (ici ou sur un autre appareil) : <strong>Importer</strong> → <strong>Importer un classeur (.json)</strong>. Il remplace le classeur actuel, après confirmation ; « Annuler » permet de revenir en arrière.</li>
-            <li><strong>Conseil</strong> : faites un export .json régulièrement (par exemple chaque semaine) et rangez-le ailleurs que sur l'appareil. L'export <strong>CSV</strong>, lui, ne garde que les valeurs d'une feuille (sans formules ni mise en forme) : il sert à ouvrir le tableau dans un autre tableur.</li>
+            <li><strong>Conseil</strong> : fais un export .json régulièrement (par exemple chaque semaine) et range-le ailleurs que sur l'appareil. L'export <strong>CSV</strong>, lui, ne garde que les valeurs d'une feuille (sans formules ni mise en forme) : il sert à ouvrir le tableau dans un autre tableur.</li>
           </ul>
         </section>
         <section>
@@ -779,7 +780,7 @@
           </table>
           <p class="note">Une plage s'écrit <code>A1:B5</code> ; une colonne entière <code>A:A</code>. Le <code>$</code> fige une référence (<code>$A$1</code>). Une cellule d'une autre feuille : <code>=Feuille2!A1</code>, ou <code>='Mes ventes'!B3</code> si le nom contient une espace. Les formules se recalculent toutes seules.</p>
           <p class="note">Critères de NB.SI, SOMME.SI et des fonctions .ENS :<code>"&gt;5"</code>, <code>"&lt;=2,5"</code>, <code>"&lt;&gt;0"</code> (différent de 0), <code>"pomme"</code>, <code>"P*"</code> (commence par P), <code>""</code> (cellules vides). Les majuscules ne comptent pas : <code>"oui"</code> = <code>"Oui"</code>.</p>
-          <p class="note">Dates : tapez <code>23/10/2026</code>. Une date est un nombre de jours : <code>=B1-A1</code> donne l'écart en jours, <code>=A1+7</code> la date une semaine plus tard.</p>
+          <p class="note">Dates : tape <code>23/10/2026</code>. Une date est un nombre de jours : <code>=B1-A1</code> donne l'écart en jours, <code>=A1+7</code> la date une semaine plus tard.</p>
         </section>
         <section>
           <h3>Erreurs</h3>
@@ -795,7 +796,7 @@
               <tr><td><code>#NOMBRE!</code></td><td>calcul impossible (racine d'un nombre négatif…)</td></tr>
             </tbody>
           </table>
-          <p class="note">Sélectionnez une cellule en erreur : l'explication s'affiche en bas de l'écran.</p>
+          <p class="note">Sélectionne une cellule en erreur : l'explication s'affiche en bas de l'écran.</p>
         </section>
         <section>
           <h3>Raccourcis</h3>

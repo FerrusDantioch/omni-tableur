@@ -12,7 +12,7 @@ comme une application classique.
 - Créée par Ferrus Dantioch, avec l'aide de l'intelligence artificielle.
 
 **Ouvrir l'application :** https://ferrusdantioch.github.io/omni-tableur/
-(dépôt GitHub `FerrusDantioch/omni-tableur`).
+(dépôt GitHub `FerrusDantioch/omni-tableur` — version **2.2.4**).
 
 L'application s'appelait « Tableur » jusqu'à la version 2.0.0, et son dépôt
 aussi. Le dépôt a depuis été renommé `omni-tableur`, ce qui a changé son
@@ -50,7 +50,7 @@ classeur (faire régulièrement un export .json).
   modification, et aussitôt quand l'application passe en arrière-plan. L'état
   est indiqué en bas à droite (« ✓ Enregistré »).
 - Importer un classeur .json **remplace** le classeur ouvert, après la
-  question « Cela remplacera votre classeur actuel. Continuer ? ». Juste
+  question « Cela remplacera ton classeur actuel. Continuer ? ». Juste
   après, le bouton « Annuler » permet encore de revenir au classeur d'avant.
   Pour garder les deux, exporte d'abord le classeur ouvert.
 - Un fichier abîmé, vide, venant d'une autre application ou d'une version
@@ -337,7 +337,7 @@ servent qu'aux vérifications : ils ne gênent pas l'application.
 
 **Publier une mise à jour plus tard**
 
-1. Augmente le numéro de version dans `js/config.js` (par exemple `2.1.0` devient `2.1.1`).
+1. Augmente le numéro de version dans `js/config.js` (par exemple `2.2.3` devient `2.2.4`).
 2. Envoie les fichiers modifiés sur la branche `main`.
 3. Les personnes qui utilisent l'application verront : « Une nouvelle version
    est disponible. Recharger ».
@@ -550,6 +550,8 @@ tests/                   vérifications automatiques
 
 **© 2026 Ferrus Dantioch — Creative Commons BY-NC-ND 4.0**
 ([résumé de la licence en français](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr))
+
+**Contact :** omni-systeme.choking513@passmail.net
 
 En clair : le partage est autorisé, à l'identique et en citant l'auteur ;
 l'usage commercial est interdit ; la modification et les œuvres dérivées

@@ -86,7 +86,7 @@ test('exporter puis réimporter le classeur : tout revient, et « Annuler » ren
   await page2.keyboard.press('Enter');
   await importer(page2, { name: nom, mimeType: 'application/json', buffer: Buffer.from(contenu) });
   await page2.waitForSelector('#fenetre-importer-classeur[open]');
-  assert.match(await page2.textContent('#fenetre-importer-classeur'), /Cela remplacera votre classeur actuel\. Continuer \?/);
+  assert.match(await page2.textContent('#fenetre-importer-classeur'), /Cela remplacera ton classeur actuel\. Continuer \?/);
   assert.match(await page2.textContent('#resume-import'), /classeur « Budget familial », 2 feuilles/);
   await page2.click('#fenetre-importer-classeur [data-fermer="remplacer"]');
   await attendreImport(page2);
@@ -157,7 +157,7 @@ test('fichier invalide, abîmé ou d’une autre application : message clair et 
     await importer(page, fichierChoisi);
     await page.waitForSelector('#fenetre-erreur-fichier[open]');
     assert.match(await page.textContent('#texte-erreur-fichier'), attendu);
-    assert.match(await page.textContent('#fenetre-erreur-fichier'), /Votre classeur actuel n'a pas été modifié/);
+    assert.match(await page.textContent('#fenetre-erreur-fichier'), /Ton classeur actuel n'a pas été modifié/);
     assert.equal(await page.isVisible('#fenetre-importer-classeur'), false); // aucune confirmation demandée
     await page.click('#fenetre-erreur-fichier [data-fermer]');
     assert.equal(await page.evaluate(() => JSON.stringify(window.omniTableur.classeur.versJSON())), avant);
