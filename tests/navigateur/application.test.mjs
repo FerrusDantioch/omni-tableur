@@ -145,7 +145,7 @@ test('À propos : bouton direct, contact, licence et bibliothèques', async () =
   assert.ok(await page.isVisible('#fenetre-a-propos'));
   const texte = await page.textContent('#fenetre-a-propos');
   assert.match(texte, /Omni-Tableur/);
-  assert.match(texte, /Version \d+\.\d+\.\d+/);
+  assert.match(texte, /Version 2\.2\.4/);
   assert.match(texte, /Application créée par Ferrus Dantioch, avec l'aide de l'intelligence artificielle/);
   assert.match(texte, /Un retour, une idée, un problème \?/);
   assert.match(texte, /Creative Commons BY-NC-ND 4\.0/);
@@ -182,7 +182,7 @@ test('menu : lignes et colonnes en plus, aide, à propos', async () => {
   await page.click('#menu-a-propos');
   const texte = await page.textContent('#fenetre-a-propos');
   assert.match(texte, /Application créée par Ferrus Dantioch, avec l'aide de l'intelligence artificielle/);
-  assert.match(texte, /Version \d+\.\d+\.\d+/);
+  assert.match(texte, /Version 2\.2\.4/);
   assert.match(texte, /fast-formula-parser/);
   await page.click('#fenetre-a-propos [data-fermer]');
   assert.equal(await page.isVisible('#fenetre-a-propos'), false);
@@ -244,8 +244,61 @@ test('application installable et utilisable sans connexion', async () => {
     return [...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family);
   });
   assert.ok(polices.some((f) => f.includes('Literata')), `polices chargées : ${polices}`);
+  // Consultation hors ligne des licences (vérification du cache exact avant navigate).
+  const pageLicence = await contexte.newPage();
+  const repLicence = await pageLicence.goto(new URL('licences/fast-formula-parser-MIT.txt', serveur.url).href);
+  assert.equal(repLicence.status(), 200);
+  const contenuLicence = await pageLicence.textContent('body');
+  assert.match(contenuLicence, /MIT License/);
+  assert.doesNotMatch(contenuLicence, /Omni-Tableur/);
+  await pageLicence.close();
   assert.deepEqual(page.erreurs, []);
   await contexte.setOffline(false);
+  await contexte.close();
+});
+
+test('hors ligne réel (serveur arrêté) : licences en cache (200) et ressource absente (503)', async () => {
+  const serveurTemp = await demarrerServeur();
+  const { contexte, page } = await ouvrirApplication(navigateur, serveurTemp.url);
+  try {
+    await page.evaluate(() => navigator.serviceWorker.ready);
+    await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
+    serveurTemp.arreter();
+    for (let i = 0; i < 40; i++) {
+      const coupe = await fetch(serveurTemp.url).then(() => false, () => true);
+      if (coupe) break;
+      await new Promise((r) => setTimeout(r, 50));
+    }
+    const pageLicence = await contexte.newPage();
+    const repLicence = await pageLicence.goto(new URL('licences/fast-formula-parser-MIT.txt', serveurTemp.url).href);
+    assert.equal(repLicence.status(), 200);
+    const contenuLicence = await pageLicence.textContent('body');
+    assert.match(contenuLicence, /MIT License/);
+    assert.doesNotMatch(contenuLicence, /Omni-Tableur/);
+    await pageLicence.close();
+
+    const statutInconnu = await page.evaluate(async () => {
+      const rep = await fetch('ressource-inexistante-hors-ligne.txt');
+      return rep.status;
+    });
+    assert.equal(statutInconnu, 503);
+  } finally {
+    serveurTemp.arreter();
+    await contexte.close();
+  }
+});
+
+test('accessibilité et tutoiement : h1 structurant, version 2.2.4 et zéro vouvoiement dans index.html', async () => {
+  const { contexte, page } = await ouvrirApplication(navigateur, serveur.url);
+  const h1 = await page.evaluate(() => {
+    const el = document.querySelector('h1');
+    return el ? { texte: el.textContent.trim(), dansHeader: Boolean(el.closest('header')) } : null;
+  });
+  assert.deepEqual(h1, { texte: 'Omni-Tableur', dansHeader: true });
+  assert.equal(await page.evaluate(() => self.CONFIG_APP.version), '2.2.4');
+  const htmlSource = await page.evaluate(async () => (await fetch('index.html')).text());
+  const vouvoiement = htmlSource.match(/\b(vous|votre|vos|vôtre|vôtres|êtes|faites|dites|soyez|ayez|veuillez|[a-zàâéèêëîïôöùûüç]{2,}ez)\b/gi) || [];
+  assert.deepEqual(vouvoiement.filter((m) => !/^(chez|assez|nez|rez)$/i.test(m)), []);
   await contexte.close();
 });
 

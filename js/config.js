@@ -11,8 +11,8 @@ self.CONFIG_APP = Object.freeze({
   // Le fichier manifest.webmanifest contient aussi le nom : le changer aux deux endroits.
   nom: 'Omni-Tableur',
 
-  // Numéro de version : à augmenter à chaque publication (ex. 2.1.1).
-  version: '2.2.3',
+  // Numéro de version : à augmenter à chaque publication (ex. 2.2.4).
+  version: '2.2.4',
 
   auteurs: "Ferrus Dantioch, avec l'aide de l'intelligence artificielle",
   siteOmni: 'https://ferrusdantioch.github.io/omni-systeme/',

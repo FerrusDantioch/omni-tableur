@@ -2,7 +2,7 @@
 // qu'elle fonctionne sans connexion internet.
 //
 // - À l'installation, tous les fichiers de la liste FICHIERS sont copiés dans
-//   un cache dont le nom contient la version (ex. « omni-tableur-2.1.0 »).
+//   un cache dont le nom contient la version (ex. « omni-tableur-2.2.4 »).
 // - Ensuite, chaque fichier est servi depuis ce cache (« cache d'abord »).
 // - Quand la version change dans js/config.js, le navigateur détecte ce
 //   service worker modifié, prépare le nouveau cache, et l'application propose
@@ -144,14 +144,24 @@ self.addEventListener('fetch', (evenement) => {
   evenement.respondWith(
     (async () => {
       const cache = await caches.open(CACHE);
+      const enCache = await cache.match(requete, { ignoreSearch: true });
+      if (enCache) return enCache;
+
       if (requete.mode === 'navigate') {
-        // Toute page de l'application affiche index.html.
+        // Toute autre navigation vers l'application affiche index.html.
         const page = (await cache.match('./')) ?? (await cache.match('index.html'));
         if (page) return page;
-        return fetch(requete);
       }
-      const enCache = await cache.match(requete, { ignoreSearch: true });
-      return enCache ?? fetch(requete);
+
+      try {
+        return await fetch(requete);
+      } catch {
+        return new Response('Hors ligne', {
+          status: 503,
+          statusText: 'Service Unavailable',
+          headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+        });
+      }
     })(),
   );
 });
